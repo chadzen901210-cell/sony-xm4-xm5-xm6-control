@@ -14,10 +14,10 @@ tray icon, and a command-line tool. Works while music is playing.
 | Automatic ambient level | | | ✓ |
 | Equalizer: presets and custom bands | 5 bands + Clear Bass | 5 bands + Clear Bass | 10 bands |
 | Head tracking (live 3D view) | | ✓ | ✓ |
-| **Tested on real headphones** | **not yet** | **yes** | **not yet** |
+| **Tested on real headphones** | **not yet** | **yes** | **yes** (reported by a user) |
 
-The XM4 and XM6 support follows what other open-source projects found (see [PROTOCOL.md](PROTOCOL.md) §11)
-but has not been tried on real headphones yet. If you own one, please
+The XM4 and XM6 support follows what other open-source projects found (see [PROTOCOL.md](PROTOCOL.md) §11).
+A user has confirmed the XM6 works; the XM4 has not been tried on real headphones yet. If you own one, please
 [open an issue](../../issues) with what works and what does not.
 
 This is an unofficial project. It is not made by, endorsed by or affiliated with Sony.
@@ -112,7 +112,7 @@ from them.
 - 程式沒有數位簽章，Windows 可能顯示「Windows 已保護您的電腦」，請按「**其他資訊 → 仍要執行**」。
 - 先在 Windows 設定中配對耳機。程式會依藍牙名稱自動認出型號；配對了多副時，使用目前連線中的那一副。
 - 關閉視窗後程式會留在右下角系統匣：點圖示叫回視窗，按右鍵可切換降噪模式或結束。
-- 已在 **WH-1000XM5** 實機測試；**XM4、XM6 尚未實機測試**（依其他開源專案的資料實作），歡迎
-  [開 issue](../../issues) 回報結果，最好附上 `sonyxm status --debug` 的輸出。
+- 已在 **WH-1000XM5** 實機測試，**XM6** 有使用者回報可以使用；**XM4 尚未實機測試**（依其他開源專案的資料實作），
+  歡迎[開 issue](../../issues) 回報結果，最好附上 `sonyxm status --debug` 的輸出。
 - 只會送出白名單內的指令，絕不會送出韌體更新、恢復原廠、重新開機、關機或配對相關的指令。
 - 本專案為非官方專案，與 Sony 無關。

@@ -210,7 +210,7 @@ class ServerTest(unittest.TestCase):
         # Each language must translate every key English has (a missing one falls back to English)
         import re
 
-        source = self.request("GET", "/i18n.js")[1].decode()
+        source = self.request("GET", "/i18n.js")[1].decode().replace("\r\n", "\n")
         blocks = re.split(r"\n  (?:\"[\w-]+\"|\w+): \{\n    name:", source)[1:]
         keys = [set(re.findall(r'"([\w.]+)":', block)) for block in blocks]
         self.assertEqual(len(keys), 10)

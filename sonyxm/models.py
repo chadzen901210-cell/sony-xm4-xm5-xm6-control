@@ -47,7 +47,7 @@ class Model:
     battery_kinds: tuple[int, ...]  # battery queries to try, in order
     eq_presets: tuple[EqPreset, ...]  # what the app offers
     head_tracking: bool
-    tested: bool  # checked on real headphones by this project
+    tested: bool  # checked on real headphones (by this project or a user's report)
 
     @property
     def service(self) -> uuid.UUID:
@@ -64,8 +64,9 @@ MODELS = (
           head_tracking=False, tested=False),
     Model("WH-1000XM5", V2, (0x17, 0x15), (BATTERY_SINGLE,), _PRESETS_XM5,
           head_tracking=True, tested=True),
+    # A user reported the XM6 working with this app (2026-10-24)
     Model("WH-1000XM6", V2, (NCASM_SUBTYPE_AUTO, 0x17), (BATTERY_SINGLE, BATTERY_WITH_THRESHOLD), _PRESETS_XM6,
-          head_tracking=True, tested=False),
+          head_tracking=True, tested=True),
 )
 
 

@@ -419,7 +419,9 @@ class OtherModelsTest(unittest.TestCase):
 
     def test_connect_names_the_model(self):
         _, out, _ = run(["connect"], FakeSocket(simulated_xm6(NcAsmState(NC, False, 10))), device=XM6)
-        self.assertIn("Model: WH-1000XM6, protocol v2 (not yet tested on these headphones by this project)", out)
+        self.assertIn("Model: WH-1000XM6, protocol v2\n", out)
+        _, out, _ = run(["connect"], FakeSocket(simulated_xm4(NcAsmState(NC, False, 10))), device=XM4)
+        self.assertIn("Model: WH-1000XM4, protocol v1 (not yet tested on these headphones by this project)", out)
 
     def test_xm4_wind(self):
         device = simulated_xm4(NcAsmState(NC, False, 10))

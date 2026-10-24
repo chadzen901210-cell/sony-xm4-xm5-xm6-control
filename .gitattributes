@@ -1,0 +1,3 @@
+# Same line endings on every checkout (GitHub's Windows runners would use CRLF)
+* text=auto eol=lf
+*.ico binary

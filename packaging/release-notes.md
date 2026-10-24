@@ -7,7 +7,7 @@ Control Sony **WH-1000XM4 / XM5 / XM6** headphones from Windows: noise cancellin
 
 Windows may warn that the app is from an unknown publisher (it is not code-signed). Click **More info → Run anyway**.
 
-Tested on the WH-1000XM5. Support for the WH-1000XM4 and XM6 follows other open-source projects and has **not been tested on real headphones yet**: please open an issue with what works and what does not.
+Tested on the WH-1000XM5; a user has confirmed the WH-1000XM6 works. Support for the WH-1000XM4 follows other open-source projects and has **not been tested on real headphones yet**: please open an issue with what works and what does not.
 
 ---
 
@@ -18,4 +18,4 @@ Tested on the WH-1000XM5. Support for the WH-1000XM4 and XM6 follows other open-
 
 程式沒有數位簽章，Windows 可能會跳出「Windows 已保護您的電腦」，請按「**其他資訊 → 仍要執行**」。
 
-已在 WH-1000XM5 實機測試；WH-1000XM4 與 XM6 依照其他開源專案的資料實作，**尚未實機測試**，歡迎開 issue 回報結果。
+已在 WH-1000XM5 實機測試，WH-1000XM6 有使用者回報可以使用；WH-1000XM4 依照其他開源專案的資料實作，**尚未實機測試**，歡迎開 issue 回報結果。
