@@ -1,3 +1,5 @@
+**New in 0.1.1:** a ☕ support link in the app window (opens the PayPal donation page in your browser).
+
 Control Sony **WH-1000XM4 / XM5 / XM6** headphones from Windows: noise cancelling, ambient sound, equalizer, battery and head tracking, without the phone app. No Python needed.
 
 **Download one of these** (below, under Assets):
@@ -10,6 +12,8 @@ Windows may warn that the app is from an unknown publisher (it is not code-signe
 Tested on the WH-1000XM5; a user has confirmed the WH-1000XM6 works. Support for the WH-1000XM4 follows other open-source projects and has **not been tested on real headphones yet**: please open an issue with what works and what does not.
 
 ---
+
+**0.1.1 新增：** App 視窗左下角多了「☕ 歡迎斗內」連結（會用你的瀏覽器開啟 PayPal 斗內頁面）。
 
 在 Windows 上控制 Sony **WH-1000XM4 / XM5 / XM6** 耳機：降噪、環境音、等化器、電量、頭部追蹤，不需要手機 App，也不需要安裝 Python。
 

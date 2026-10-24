@@ -322,6 +322,12 @@ class ServerTest(unittest.TestCase):
                     self.assertEqual(self.request("POST", "/api/labels", bad)[0].status, 400)
         self.assertEqual(len(tray.labels), 1)
 
+    def test_donate_opens_the_fixed_page_in_the_default_browser(self):
+        with mock.patch.object(webui.webbrowser, "open") as opened:
+            self.assertEqual(self.request("POST", "/api/donate", {"url": "https://evil.example"})[0].status, 202)
+        opened.assert_called_once_with(webui.DONATE_URL)
+        self.assertEqual(self.request("POST", "/api/donate", {}, token="wrong")[0].status, 403)
+
     def test_bad_bodies(self):
         self.assertEqual(self.request("POST", "/api/refresh", raw=b"not json")[0].status, 400)
         self.assertEqual(self.request("POST", "/api/refresh", raw=b"[1, 2]")[0].status, 400)

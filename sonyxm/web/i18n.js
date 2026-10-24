@@ -73,6 +73,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "Open XM Control",
       "tray.quit": "Quit",
       "language": "Language",
+      "donate": "☕ Support XM Control",
     },
   },
 
@@ -146,6 +147,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "開啟 XM Control",
       "tray.quit": "結束",
       "language": "語言",
+      "donate": "☕ 歡迎斗內",
     },
   },
 
@@ -219,6 +221,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "XM Control を開く",
       "tray.quit": "終了",
       "language": "言語",
+      "donate": "☕ 開発を応援する",
     },
   },
 
@@ -292,6 +295,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "XM Control 열기",
       "tray.quit": "종료",
       "language": "언어",
+      "donate": "☕ 후원하기",
     },
   },
 
@@ -365,6 +369,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "XM Control öffnen",
       "tray.quit": "Beenden",
       "language": "Sprache",
+      "donate": "☕ XM Control unterstützen",
     },
   },
 
@@ -438,6 +443,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "Ouvrir XM Control",
       "tray.quit": "Quitter",
       "language": "Langue",
+      "donate": "☕ Soutenir XM Control",
     },
   },
 
@@ -511,6 +517,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "Apri XM Control",
       "tray.quit": "Esci",
       "language": "Lingua",
+      "donate": "☕ Sostieni XM Control",
     },
   },
 
@@ -584,6 +591,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "Abrir XM Control",
       "tray.quit": "Salir",
       "language": "Idioma",
+      "donate": "☕ Apoya XM Control",
     },
   },
 
@@ -657,6 +665,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "Abrir o XM Control",
       "tray.quit": "Sair",
       "language": "Idioma",
+      "donate": "☕ Apoie o XM Control",
     },
   },
 
@@ -730,6 +739,7 @@ window.XM5_LANGUAGES = {
       "tray.open": "XM Control openen",
       "tray.quit": "Afsluiten",
       "language": "Taal",
+      "donate": "☕ Steun XM Control",
     },
   },
 };

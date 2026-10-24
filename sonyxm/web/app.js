@@ -44,6 +44,7 @@ const ui = {
   headMessage: $("head-message"),
   repair: $("repair"),
   language: $("language"),
+  donate: $("donate"),
   toast: $("toast"),
 };
 
@@ -599,6 +600,13 @@ ui.recenter.addEventListener("click", () =>
   post("/api/head/recenter").catch((e) => showToast(t("error.request"), e.message)));
 ui.repair.addEventListener("click", () =>
   post("/api/head/repair").catch((e) => showToast(t("error.request"), e.message)));
+
+// The app opens the donation page in the default browser, where the user is
+// signed in to PayPal; this window's own browser profile is not.
+ui.donate.addEventListener("click", (event) => {
+  event.preventDefault();
+  post("/api/donate").catch(() => window.open(ui.donate.href, "_blank", "noopener"));
+});
 
 // ---------------------------------------------------------------- Messages
 

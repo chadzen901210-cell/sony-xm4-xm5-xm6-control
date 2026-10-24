@@ -67,6 +67,8 @@ IDLE_EXIT_DELAY = 3.0
 FIRST_WINDOW_TIMEOUT = 60.0
 # How long a newly opened window may take to appear before another one is opened
 WINDOW_START_TIME = 4.0
+# The project's PayPal donation page, opened by the window's "Support" link
+DONATE_URL = "https://www.paypal.com/ncp/payment/RBKTRJ9542BKC"
 STATIC_FILES = {
     "index.html": "text/html; charset=utf-8",
     "app.css": "text/css; charset=utf-8",
@@ -307,6 +309,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
             app.head.recenter()
         elif path == "/api/head/repair":
             app.repair_head_tracking()
+        elif path == "/api/donate":
+            # Always this one address: the window cannot make the app open anything else
+            webbrowser.open(DONATE_URL)
         elif path == "/api/labels":
             labels = clean_labels(body)
             if labels is None:

@@ -406,6 +406,21 @@ input[type="range"]:disabled::-webkit-slider-thumb { border-color: var(--muted);
   font-size: 13px;
 }
 
+.donate {
+  margin-right: auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.donate:hover,
+.donate:focus-visible {
+  background: var(--control);
+  color: var(--text);
+}
+
 .language-label {
   display: inline-flex;
   align-items: center;
