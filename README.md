@@ -108,6 +108,11 @@ it learned from: [Gadgetbridge](https://codeberg.org/Freeyourgadget/Gadgetbridge
 [NicholasSlattery/sony-head-tracker](https://github.com/NicholasSlattery/sony-head-tracker). No code was copied
 from them.
 
+## Support
+
+XM Control is free and will stay free. If it is useful to you,
+**[☕ buy me a coffee with PayPal](https://www.paypal.com/ncp/payment/RBKTRJ9542BKC)**. Thank you!
+
 ## License
 
 [MIT](LICENSE)
@@ -130,3 +135,4 @@ from them.
   歡迎[開 issue](../../issues) 回報結果，最好附上 `sonyxm status --debug` 的輸出。
 - 只會送出白名單內的指令，絕不會送出韌體更新、恢復原廠、重新開機、關機或配對相關的指令。
 - 本專案為非官方專案，與 Sony 無關。
+- 覺得好用的話，歡迎 **[☕ 用 PayPal 斗內](https://www.paypal.com/ncp/payment/RBKTRJ9542BKC)**，感謝支持！

@@ -299,6 +299,28 @@ code {
   background: var(--surface-2);
 }
 
+/* Donation */
+.support {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+  padding: 32px 36px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.support h2 { margin-bottom: 6px; }
+.support p { margin: 0; color: var(--muted); max-width: 36em; }
+.button.coffee {
+  background: #ffc439;
+  border-color: transparent;
+  color: #1a1a1a;
+}
+.button.coffee:hover { background: #ffb400; color: #1a1a1a; }
+
 /* Footer */
 footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
@@ -313,6 +335,7 @@ footer p { margin: 0; }
 @media (max-width: 480px) {
   .wrap { padding: 0 16px; }
   section { padding: 52px 0; }
+  .support { padding: 24px 20px; }
   .lead { font-size: 17px; }
   .button { width: 100%; justify-content: center; }
 }
