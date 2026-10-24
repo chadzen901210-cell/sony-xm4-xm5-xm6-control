@@ -6,8 +6,8 @@ Clear Bass, check the battery, and see head tracking live. It is a desktop alter
 (Sony | Headphones Connect / Sound Connect), which have no Windows version. Works on Windows 10 and 11 over
 Bluetooth, while music is playing.
 
-**免費的 Windows 電腦版 Sony 耳機控制軟體**：在電腦上切換 WH-1000XM4 / XM5 / XM6 的降噪、環境音，調整等化器（EQ），
-查看電量。不用打開手機的 Sony | Headphones Connect / Sound Connect App。[繁體中文說明在下面](#繁體中文)
+**XM5 電腦控制：免費的 Windows 電腦版 Sony 耳機控制軟體**。在電腦上切換 XM5（WH-1000XM5）、XM4、XM6 的降噪、環境音，
+調整等化器（EQ），查看電量。不用打開手機的 Sony | Headphones Connect / Sound Connect App。[繁體中文說明在下面](#繁體中文)
 
 <p align="center">
   <img src="docs/screenshot.jpg" width="360"
