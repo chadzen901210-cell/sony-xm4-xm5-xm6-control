@@ -14,7 +14,9 @@ Bluetooth, while music is playing.
        alt="XM Control on Windows: noise cancelling, ambient sound and equalizer for the Sony WH-1000XM5">
 </p>
 
-**[⬇ Download for Windows](../../releases/latest)** (installer or portable zip, no Python needed)
+**[⬇ Download for Windows](../../releases/latest)** (installer or portable zip, no Python needed) ·
+[Website](https://chadzen901210-cell.github.io/sony-xm4-xm5-xm6-control/) ·
+[中文網站](https://chadzen901210-cell.github.io/sony-xm4-xm5-xm6-control/zh-tw/)
 
 | | WH-1000XM4 | WH-1000XM5 | WH-1000XM6 |
 |---|---|---|---|
