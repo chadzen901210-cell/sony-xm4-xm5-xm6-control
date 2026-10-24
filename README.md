@@ -1,10 +1,20 @@
-# XM Control
+# XM Control: Sony WH-1000XM4 / XM5 / XM6 app for Windows PC
 
-Control Sony **WH-1000XM4 / WH-1000XM5 / WH-1000XM6** headphones from Windows, without the phone app:
-noise cancelling, ambient sound, equalizer, battery level and head tracking. A small app window, a system
-tray icon, and a command-line tool. Works while music is playing.
+**A free Windows app to control Sony WH-1000XM4, WH-1000XM5 and WH-1000XM6 headphones from your PC or
+laptop**: switch noise cancelling and ambient sound, set the ambient level, adjust the equalizer (EQ) and
+Clear Bass, check the battery, and see head tracking live. It is a desktop alternative to Sony's phone apps
+(Sony | Headphones Connect / Sound Connect), which have no Windows version. Works on Windows 10 and 11 over
+Bluetooth, while music is playing.
 
-[繁體中文說明在下面](#繁體中文)
+**免費的 Windows 電腦版 Sony 耳機控制軟體**：在電腦上切換 WH-1000XM4 / XM5 / XM6 的降噪、環境音，調整等化器（EQ），
+查看電量。不用打開手機的 Sony | Headphones Connect / Sound Connect App。[繁體中文說明在下面](#繁體中文)
+
+<p align="center">
+  <img src="docs/screenshot.jpg" width="360"
+       alt="XM Control on Windows: noise cancelling, ambient sound and equalizer for the Sony WH-1000XM5">
+</p>
+
+**[⬇ Download for Windows](../../releases/latest)** (installer or portable zip, no Python needed)
 
 | | WH-1000XM4 | WH-1000XM5 | WH-1000XM6 |
 |---|---|---|---|
@@ -104,8 +114,10 @@ from them.
 
 ## 繁體中文
 
-在 Windows 上控制 Sony **WH-1000XM4 / XM5 / XM6** 耳機，不需要手機 App：降噪、環境音、等化器、電量、頭部追蹤。
-有視窗介面、系統匣圖示，也有指令列工具；播放音樂時也能使用。
+**XM Control：Sony WH-1000XM4 / XM5 / XM6 的 Windows 電腦版控制程式。** Sony 的 Headphones Connect / Sound Connect
+只有手機版，這個免費開源軟體讓你在 Windows 10 / 11 的電腦或筆電上，直接切換耳機的降噪、環境音（含強度與專注於人聲），
+調整等化器（EQ）與 Clear Bass，查看電量，還能即時顯示頭部追蹤。有視窗介面、系統匣圖示，也有指令列工具；
+播放音樂時也能使用。
 
 - **下載**：到 [Releases](../../releases/latest) 下載 `XM-Control-…-setup.exe`（安裝檔，不需系統管理員權限）或
   `XM-Control-…-windows.zip`（免安裝，解壓後執行 `XM Control.exe`）。不需要安裝 Python。
