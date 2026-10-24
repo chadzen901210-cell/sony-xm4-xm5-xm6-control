@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sony-xm-control"
+dynamic = ["version"]
+description = "Control Sony WH-1000XM4 / XM5 / XM6 headphones from Windows: noise cancelling, ambient sound, equalizer, battery, head tracking"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = []
+classifiers = [
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+
+[project.scripts]
+sonyxm = "sonyxm.cli:main"
+
+[project.gui-scripts]
+xm-control = "sonyxm.webui:run"
+
+[tool.setuptools]
+packages = ["sonyxm"]
+
+[tool.setuptools.dynamic]
+version = { attr = "sonyxm.__version__" }
+
+[tool.setuptools.package-data]
+sonyxm = ["web/*"]

@@ -1,0 +1,38 @@
+name: Release
+
+# Push a tag like v0.1.0 to build the Windows downloads and publish them as a release.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test
+        run: python -m unittest
+      - name: Build the app (no Python needed to run it)
+        shell: pwsh
+        run: |
+          python -m pip install pyinstaller==6.22.3
+          ./packaging/build.ps1
+      - name: Build the installer
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart("v")
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe" "/DAppVersion=$version" "/DRepoUrl=${{ github.server_url }}/${{ github.repository }}" packaging\installer.iss
+          if ($LASTEXITCODE) { throw "iscc failed" }
+      - name: Publish
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $files = (Get-Item dist\*.zip, dist\*-setup.exe).FullName
+          gh release create "${{ github.ref_name }}" $files --title "XM Control ${{ github.ref_name }}" --notes-file packaging\release-notes.md

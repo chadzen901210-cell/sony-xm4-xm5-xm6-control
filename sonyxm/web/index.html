@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>XM Control</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css">
+  <script src="i18n.js" defer></script>
+  <script src="head3d.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <img class="logo" src="icon.svg" alt="">
+    <div class="title">
+      <h1 id="device-name">WH-1000XM5</h1>
+      <p class="connection" id="connection" data-state="connecting">
+        <span class="dot" aria-hidden="true"></span><span id="connection-text" data-i18n="connection.connecting">Connecting…</span>
+      </p>
+      <p class="model-note" id="model-note" data-i18n="model.untested" hidden>Not yet tested on this model — please report problems</p>
+    </div>
+    <div class="battery" id="battery" hidden>
+      <svg class="battery-icon" viewBox="0 0 30 16" aria-hidden="true">
+        <rect class="body" x="1" y="1" width="25" height="14" rx="4"/>
+        <rect class="cap" x="27" y="5" width="2.5" height="6" rx="1.2"/>
+        <rect class="fill" id="battery-fill" x="3" y="3" width="21" height="10" rx="2.2"/>
+      </svg>
+      <span id="battery-text">–</span>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" role="status" hidden></div>
+
+  <section class="card" aria-labelledby="noise-title">
+    <div class="card-head">
+      <h2 id="noise-title" data-i18n="noise.title">Noise control</h2>
+      <span class="spinner" id="busy" hidden></span>
+    </div>
+    <div class="segmented" id="modes" role="radiogroup" aria-labelledby="noise-title">
+      <span class="thumb" aria-hidden="true"></span>
+      <button type="button" role="radio" aria-checked="false" data-mode="noise_cancelling">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13v-1a7 7 0 0 1 14 0v1"/><rect x="3.5" y="12.5" width="4" height="7" rx="2"/><rect x="16.5" y="12.5" width="4" height="7" rx="2"/><path d="M10 9.5l4 4m0-4l-4 4"/></svg>
+        <span data-i18n="mode.noise_cancelling">Noise cancelling</span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" data-mode="wind" id="mode-wind" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.6 4.6A2 2 0 1 1 11 8H2m10.6 11.4A2 2 0 1 0 14 16H2m15.7-8.3A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        <span data-i18n="mode.wind">Wind noise reduction</span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" data-mode="ambient">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6a5 5 0 0 0-5 5c0 2 1 3 2 4s1 2 1 3a2 2 0 0 0 4 0"/><path d="M12 9a2 2 0 0 0-2 2"/><path d="M17.5 7.5a7 7 0 0 1 0 7M20 5a10.5 10.5 0 0 1 0 12"/></svg>
+        <span data-i18n="mode.ambient">Ambient sound</span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" data-mode="off">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5"/><path d="M7 17L17 7"/></svg>
+        <span data-i18n="mode.off">Off</span>
+      </button>
+    </div>
+    <div class="ambient" id="ambient">
+      <div class="row">
+        <label for="level" data-i18n="ambient.level">Ambient sound level</label>
+        <output id="level-value" for="level">–</output>
+      </div>
+      <input type="range" id="level" min="1" max="20" step="1" value="10">
+      <div class="row switch-row" id="auto-ambient-row" hidden>
+        <label for="auto-ambient" data-i18n="noise.auto_ambient">Automatic level</label>
+        <input type="checkbox" role="switch" class="switch" id="auto-ambient">
+      </div>
+      <div class="row switch-row">
+        <label for="voice" data-i18n="ambient.voice">Focus on voice</label>
+        <input type="checkbox" role="switch" class="switch" id="voice">
+      </div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="eq-title" id="eq-card" hidden>
+    <div class="card-head">
+      <h2 id="eq-title" data-i18n="eq.title">Equalizer</h2>
+      <select class="select" id="eq-preset" aria-labelledby="eq-title"></select>
+    </div>
+    <svg class="eq-curve" id="eq-curve" viewBox="0 0 300 84" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="eq-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" class="eq-fill-top"/>
+          <stop offset="1" class="eq-fill-bottom"/>
+        </linearGradient>
+      </defs>
+      <line class="eq-zero" x1="0" y1="42" x2="300" y2="42"/>
+      <path class="eq-area" id="eq-area" d=""/>
+      <path class="eq-line" id="eq-line" d=""/>
+      <g id="eq-dots"></g>
+    </svg>
+    <div class="eq-bands" id="eq-bands"></div>
+  </section>
+
+  <section class="card" aria-labelledby="head-title" id="head-card">
+    <div class="card-head">
+      <h2 id="head-title" data-i18n="head.title">Head tracking</h2>
+      <input type="checkbox" role="switch" class="switch" id="head-toggle" aria-labelledby="head-title">
+    </div>
+    <p class="muted small" id="head-unsupported" data-i18n="head.unsupported" hidden>This model has no head tracking sensor.</p>
+    <div class="stage" id="stage" data-state="off">
+      <canvas id="head-canvas" role="img" data-i18n-aria="head.aria" aria-label="3D view of your head's orientation"></canvas>
+      <p class="stage-note" id="stage-note"></p>
+    </div>
+    <dl class="readouts">
+      <div><dt data-i18n="head.yaw">Yaw</dt><dd id="yaw">–</dd></div>
+      <div><dt data-i18n="head.pitch">Pitch</dt><dd id="pitch">–</dd></div>
+      <div><dt data-i18n="head.roll">Roll</dt><dd id="roll">–</dd></div>
+    </dl>
+    <div class="head-actions">
+      <button type="button" class="button" id="recenter" data-i18n="head.recenter" disabled>Recenter</button>
+      <span class="muted" id="head-rate"></span>
+    </div>
+    <div class="notice" id="head-notice" hidden>
+      <p id="head-message"></p>
+      <button type="button" class="button accent" id="repair" data-i18n="head.repair">Repair sensor</button>
+      <p class="muted small" data-i18n="head.repairNote">Windows asks for administrator approval once.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <label for="language" class="language-label">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>
+      <span data-i18n="language">Language</span>
+    </label>
+    <select class="select" id="language"></select>
+  </footer>
+
+  <div class="toast" id="toast" role="alert" hidden></div>
+</main>
+</body>
+</html>
